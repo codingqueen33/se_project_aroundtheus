@@ -14,9 +14,12 @@
     margin-left: 20px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 620px) {
     .footer__text {
         font-size: 14px;
+        line-height: 17px;
         margin-top: 48px;
+        margin-bottom: 36px;
+        justify-content: center;
     }
 }
