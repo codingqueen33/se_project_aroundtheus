@@ -2,20 +2,22 @@
 
 ### Overview
 
--   Intro
--   Figma
--   Images
+-   Project Name and Description
+-   Technologies Used
+-   Link to Project
 
-**Intro**
+**Project Name and Description**
 
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.
+This project, Around the U.S., is a webpage that displays stunning locations across the United States. Users can view these images and their description with the ability to engage with the page. Users can like their favorite cards and the application also includes the option to create and edit their profiles allowing an engaging user experience.
 
-**Figma**
+**Technologies Used**
 
--   [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)
+-   HTML: The project's main structure and content was created using HTML standard markup language for creating web pages
 
-**Link to my project**
+-   CSS: Cascading style sheets were used to style the page and layout the page. This technology ensures a visually appealing and responsive design.
 
-(https://github.com/codingqueen33/se_project_aroundtheus)
+-   Responsive Design: this website is desgined to be adapt to any screen size and devices for optimal user experience. Its design is made so that all elements are displayed correctly on whichever screen size the user is viewing the webpage.
 
-Good luck and have fun!
+-   **Link to my project**
+
+(https://codingqueen33.github.io/se_project_aroundtheus/)

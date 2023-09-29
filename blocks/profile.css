@@ -20,6 +20,7 @@
     grid-area: button;
     margin-left: 18px;
     padding: 0;
+    border: 1px solid #ffffff;
 }
 
 .profile__edit-button:hover {
@@ -34,6 +35,7 @@
     grid-area: button;
     margin-left: auto;
     border-radius: 2px;
+    border: 2px solid #ffffff;
     padding: 0;
 }
 
@@ -76,17 +78,30 @@
 }
 
 @media screen and (max-width: 320px) {
+    .profile {
+        margin-top: 20px;
+    }
+    .profile__title {
+        text-align: center;
+        margin-bottom: 10px;
+    }
     .profile__image {
         margin-bottom: 30px;
     }
     .profile__description {
         padding-right: 0;
+        margin-top: 10px;
     }
     .profile__info {
         padding-left: 0;
     }
     .profile__add-button {
         width: 90%;
+        border: 2px solid #ffffff;
+    }
+    .profile__edit-button {
+        margin-left: 10px;
+        border: 1px solid #ffffff;
     }
 }
 
@@ -124,10 +139,12 @@
     .profile__add-button {
         margin: 0;
         flex-shrink: 2;
+        border: 2px solid #ffffff;
     }
 
     .profile__edit-button {
         width: 18px;
         height: 18px;
+        border: 1px solid #ffffff;
     }
 }
