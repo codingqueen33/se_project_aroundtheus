@@ -4,6 +4,7 @@
     border-radius: 10px;
     list-style: none;
     overflow: hidden;
+    max-width: 282px;
 }
 
 .card__image {
@@ -16,11 +17,11 @@
     font-family: "Inter", Arial, Helvetica, sans-serif;
     font-weight: 900;
     font-size: 24px;
-    line-height: 29.05px;
+    line-height: normal;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    max-width: 880px;
+    max-width: 219px;
     margin: 0;
 }
 
