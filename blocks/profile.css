@@ -99,13 +99,15 @@
         justify-content: center;
     }
     .profile__title {
-        max-width: 196px;
         font-size: 22px;
-        margin-right: 8px;
-        line-height: 26.63px;
-        top: 276px;
-        left: 62px;
+        line-height: 48px;
+        font-weight: 500;
+        grid-area: title;
+        margin: 0;
+        font-style: normal;
+        font-family: "Inter", Arial, sans-serif;
     }
+
     .profile__description {
         width: 100%;
         max-width: 282px;
@@ -114,11 +116,15 @@
         margin: 0;
     }
     .profile__edit-button {
-        width: 18px;
-        height: 18px;
-        top: 280px;
-        left: 268px;
+        background: transparent url(../images/edit-button.svg) center no-repeat;
+        width: 24px;
+        line-height: 48px;
+        padding-left: 35px;
+        grid-area: button;
+        border: white;
+        border-radius: 2px;
     }
+
     .profile__add-button {
         margin: 0;
         width: 282px;
