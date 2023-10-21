@@ -83,7 +83,7 @@
     .profile {
         flex-direction: column;
         margin-bottom: 36px;
-        max-width: 100%;
+        max-width: 282px;
         padding-bottom: 0;
         justify-content: center;
     }
@@ -117,12 +117,11 @@
     }
     .profile__edit-button {
         background: transparent url(../images/edit-button.svg) center no-repeat;
-        width: 24px;
-        line-height: 48px;
-        padding-left: 35px;
+        width: 18px;
+        height: 18px;
+        border-radius: 1px;
         grid-area: button;
-        border: white;
-        border-radius: 2px;
+        border: 1px solid #ffffff;
     }
 
     .profile__add-button {
