@@ -49,6 +49,7 @@
     font-size: 42px;
     line-height: 48px;
     font-weight: 500;
+    line-height: 26.63px;
     margin: 0;
     grid-area: title;
     max-width: 373px;
@@ -61,7 +62,6 @@
     font-family: Inter, Arial, sans-serif;
     font-size: 18px;
     line-height: 22px;
-    font-weight: 400;
     grid-area: description;
     margin: 0;
     text-overflow: ellipsis;
@@ -113,7 +113,6 @@
         line-height: 21.78px;
     }
     .profile__edit-button {
-        background: transparent url(../images/edit-button.svg) center no-repeat;
         width: 18px;
         height: 18px;
         margin: 0 15px;
