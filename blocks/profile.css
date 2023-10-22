@@ -82,7 +82,6 @@
 @media screen and (min-width: 320px) and (max-width: 599px) {
     .profile {
         flex-direction: column;
-        margin-bottom: 36px;
         max-width: 282px;
         padding-bottom: 0;
         justify-content: center;
@@ -95,8 +94,7 @@
         flex-wrap: wrap;
         width: 100%;
         max-width: 282px;
-        margin-bottom: 36px;
-        margin-top: 30px;
+        margin-top: 15px;
         justify-content: center;
     }
     .profile__title {
@@ -114,7 +112,7 @@
         max-width: 282px;
         font-size: 14px;
         text-align: center;
-        margin: 0;
+        margin: 0 0 36px;
     }
     .profile__edit-button {
         background: transparent url(../images/edit-button.svg) center no-repeat;
