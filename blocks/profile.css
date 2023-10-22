@@ -49,7 +49,6 @@
     font-size: 42px;
     line-height: 48px;
     font-weight: 500;
-    line-height: 26.63px;
     margin: 0;
     grid-area: title;
     max-width: 373px;
@@ -102,6 +101,7 @@
         max-width: 227px;
         grid-area: title;
         margin: 0;
+        line-height: 26.63px;
     }
 
     .profile__description {
@@ -118,7 +118,6 @@
         margin: 0 15px;
         border-radius: 1px;
         grid-area: button;
-        border: 1px solid #ffffff;
     }
 
     .profile__add-button {
