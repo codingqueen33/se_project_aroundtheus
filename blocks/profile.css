@@ -99,12 +99,9 @@
     }
     .profile__title {
         font-size: 22px;
-        line-height: 48px;
         max-width: 227px;
         grid-area: title;
         margin: 0;
-        font-style: normal;
-        font-family: "Inter", Arial, sans-serif;
     }
 
     .profile__description {
@@ -113,6 +110,7 @@
         font-size: 14px;
         text-align: center;
         margin: 0 0 36px;
+        line-height: 21.78px;
     }
     .profile__edit-button {
         background: transparent url(../images/edit-button.svg) center no-repeat;
