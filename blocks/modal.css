@@ -10,8 +10,12 @@
     display: none;
 }
 
-.modal__opened {
+.modal_opened {
     display: flex;
+}
+
+.modal_close {
+    display: none;
 }
 
 .modal__container {
@@ -81,6 +85,10 @@
     left: calc(100% + 5px);
 }
 
+.modal__close:hover {
+    opacity: 0.6;
+}
+
 .modal__button {
     width: 358px;
     height: 50.15px;
@@ -91,6 +99,10 @@
     margin-top: 48px;
     border: none;
     border-radius: 2px;
+}
+
+.modal__button:hover {
+    opacity: 0.8;
 }
 
 @media screen and (max-width: 530px) {
