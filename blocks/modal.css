@@ -14,10 +14,6 @@
     display: flex;
 }
 
-.modal_close {
-    display: none;
-}
-
 .modal__container {
     position: relative;
     background-color: #ffffff;
