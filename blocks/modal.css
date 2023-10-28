@@ -116,7 +116,7 @@
         width: 26px;
         height: 26px;
         flex-shrink: 0;
-        left: 264px;
+        left: 264.62px;
         margin-bottom: 13px;
         padding: 0;
     }
@@ -142,6 +142,8 @@
     }
 
     .modal__button {
+        font-size: 14px;
+        line-height: 16.94px;
         width: 238px;
         height: 46px;
         flex-shrink: 0;
