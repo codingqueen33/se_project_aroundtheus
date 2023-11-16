@@ -39,7 +39,11 @@
                             Explorer
                         </p>
                     </div>
-                    <button class="profile__add-button" type="button"></button>
+                    <button
+                        class="profile__add-button"
+                        type="button"
+                        id="add-card-button"
+                    ></button>
                 </section>
                 <section class="cards page__section">
                     <ul class="cards__list"></ul>
@@ -49,70 +53,113 @@
                 <p class="footer__text">&copy; 2023 Around the U.S.</p>
             </footer>
         </div>
+
         <!-- Edit Modal-->
+
         <div class="modal" id="profile-edit-modal">
-            <div class="modal__container" id="modal-container">
-                <button class="modal__close" id="modal-close-button"></button>
+            <div class="modal__container">
+                <button
+                    class="modal__close-button"
+                    id="profile-close-button"
+                    type="button"
+                ></button>
                 <p class="modal__heading">Edit Profile</p>
-                <form class="modal__form">
-                    <input
-                        type="text"
-                        name="title"
-                        id="profile-title-input"
-                        class="modal__input-title"
-                        placeholder="Name"
-                    />
-                    <input
-                        type="text"
-                        name="description"
-                        id="profile-description-input"
-                        class="modal__input-description"
-                        placeholder="Description"
-                    />
-                    <button class="modal__button">Save</button>
+                <form class="modal__form" id="modal-form">
+                    <fieldset class="modal__form-fieldset">
+                        <input
+                            type="text"
+                            name="title"
+                            class="modal__form-input"
+                            placeholder="Name"
+                            id="profile-title-input"
+                        />
+                        <input
+                            type="text"
+                            name="description"
+                            class="modal__form-input"
+                            placeholder="About Me"
+                            id="profile-description-input"
+                        />
+                        <button class="modal__save-button" type="submit">
+                            Save
+                        </button>
+                    </fieldset>
                 </form>
             </div>
         </div>
+
         <!---Add card modal-->
 
         <div class="modal" id="add-card-modal">
-            <div class="modal__container" id="modal-container">
-                <button class="modal__close" id="modal-close-button"></button>
-                <p class="modal__title">New Place</p>
+            <div class="modal__container">
+                <button
+                    class="modal__close-button"
+                    id="add-card-close-button"
+                    type="button"
+                ></button>
+                <p class="modal__heading">New Place</p>
                 <form class="modal__form" id="add-card-form">
-                    <input
-                        type="text"
-                        name="title"
-                        id="profile-title-input"
-                        class="modal__input-title"
-                        placeholder="Title"
-                    />
-                    <input
-                        type="text"
-                        name="url"
-                        id="profile-url-input"
-                        class="modal__input-url"
-                        placeholder="Image URL"
-                    />
-                    <button class="modal__button">Create</button>
+                    <fieldset class="modal__form-fieldset">
+                        <input
+                            type="text"
+                            name="title"
+                            class="modal__form-input"
+                            placeholder="Title"
+                            id="card-title-input"
+                        />
+                        <input
+                            type="text"
+                            name="url"
+                            class="modal__form-input"
+                            placeholder="Image URL"
+                            id="url-input"
+                        />
+                        <button
+                            class="modal__save-button"
+                            type="submit"
+                            id="card-save-button"
+                        >
+                            Save
+                        </button>
+                    </fieldset>
                 </form>
             </div>
         </div>
 
+        <!-- Preview Image Modal -->
+
+        <div class="modal" id="preview-modal">
+            <div class="modal__preview-container">
+                <button
+                    class="modal__close-button"
+                    id="close-button"
+                    type="button"
+                ></button>
+                <img src="#" alt="" class="modal__image" />
+                <p class="modal__caption"></p>
+            </div>
+        </div>
+
+        <!-- Template -->
+
         <template id="card-template">
             <li class="card">
-                <img src="" alt="" class="card__image" />
+                <button
+                    class="card__trash-button"
+                    type="button"
+                    id="trash-button"
+                ></button>
+                <img class="card__image" src="" alt="" />
                 <div class="card__description">
-                    <h2 class="card__title"></h2>
+                    <h2 class="card__description-text"></h2>
+
                     <button
                         class="card__like-button"
                         type="button"
-                        aria-label="Like this card"
+                        id="card-like-button"
                     ></button>
-                </div>
-            </li>
-        </template>
-
+                </div></li
+        ></template>
         <script src="./scripts/index.js"></script>
     </body>
 </html>
