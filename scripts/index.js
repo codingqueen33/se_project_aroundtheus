@@ -77,7 +77,8 @@ function closePopup(popup) {
 function handleProfileEditSubmit(e) {
     e.preventDefault();
     profileTitle.textContent = profileTitleInput.value.trim();
-    profileDescription.textContent = profileDescriptionInput.value.trim();
+    profileDescriptionDisplay.textContent =
+        profileDescriptionInput.value.trim();
     closePopup(profileEditModal);
 }
 
@@ -103,7 +104,7 @@ function getCardElement(cardData) {
 
     cardTitleEl.textContent = cardData.name;
     cardImageEl.src = cardData.link;
-    cardImageEl.alt = cardData.name + "Photo";
+    cardImageEl.alt = cardData.name + " Photo";
 
     const likeBtn = cardElement.querySelector(".card__like-button");
     likeBtn.addEventListener("click", () => {
@@ -130,8 +131,10 @@ function getCardElement(cardData) {
 addCardForm.addEventListener("submit", handleCardSubmit);
 
 profileEditBtn.addEventListener("click", () => {
-    profileTitleInput.value = profileTitle.textContent.trim();
-    profileDescriptionInput.value = profileDescription.textContent.trim();
+    fillProfileForm(
+        profileTitle.textContent.trim(),
+        profileDescriptionDisplay.textContent.trim()
+    );
     openPopup(profileEditModal);
 });
 
@@ -145,3 +148,8 @@ initialCards.forEach((cardData) => {
 addNewCardBtn.addEventListener("click", () => {
     openPopup(addCardForm);
 });
+
+function fillProfileForm(title, description) {
+    profileTitleInput.value = title;
+    profileDescriptionInput.value = description;
+}
