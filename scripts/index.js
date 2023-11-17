@@ -133,7 +133,7 @@ addCardForm.addEventListener("submit", handleCardSubmit);
 profileEditBtn.addEventListener("click", () => {
     fillProfileForm(
         profileTitle.textContent.trim(),
-        profileDescriptionDisplay.textContent.trim()
+        profileDescription.textContent.trim()
     );
     openPopup(profileEditModal);
 });
