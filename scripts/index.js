@@ -77,8 +77,7 @@ function closePopup(popup) {
 function handleProfileEditSubmit(e) {
     e.preventDefault();
     profileTitle.textContent = profileTitleInput.value.trim();
-    profileDescriptionDisplay.textContent =
-        profileDescriptionInput.value.trim();
+    profileDescription.textContent = profileDescriptionInput.value.trim();
     closePopup(profileEditModal);
 }
 
