@@ -90,6 +90,11 @@
     line-height: normal;
 }
 
+.modal__input_type_error {
+    border-bottom-color: #ff0000;
+    color: red;
+}
+
 .modal__save-button {
     margin: 18px 0 0;
     padding: 0;
@@ -124,6 +129,12 @@
     max-width: 75vw;
     max-height: 75vh;
     object-fit: cover;
+}
+
+.modal__save-button_disabled {
+    border: 1px solid gray;
+    color: gray;
+    background-color: #fff;
 }
 
 @media screen and (max-width: 620px) {

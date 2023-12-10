@@ -36,6 +36,7 @@ const profileDescriptionInput = document.querySelector(
     "#profile-description-input"
 );
 const profileForm = document.forms["modal-form"];
+const overlays = document.querySelectorAll(".modal__overlay");
 
 //** Card Elements */
 
