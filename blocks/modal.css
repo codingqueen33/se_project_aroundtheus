@@ -90,9 +90,12 @@
     line-height: normal;
 }
 
-.modal__input_type_error {
+.modal__error_visible {
     border-bottom-color: #ff0000;
-    color: red;
+}
+
+span[id$="-error"] {
+    color: #ff0000;
 }
 
 .modal__save-button {
