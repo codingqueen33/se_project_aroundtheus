@@ -69,10 +69,19 @@ closeBtns.forEach((button) => {
 
 function openPopup(popup) {
     popup.classList.add("modal_opened");
+    document.addEventListener("keydown", closeOnEscape);
 }
 
 function closePopup(popup) {
     popup.classList.remove("modal_opened");
+    document.removeEventListener("keydown", closeOnEscape);
+}
+
+function closeOnEscape(e) {
+    if (e.key === "Escape") {
+        const overlay = document.querySelector(".modal_opened");
+        closePopup(overlay);
+    }
 }
 
 function handleProfileEditSubmit(e) {
@@ -153,3 +162,13 @@ function fillProfileForm(title, description) {
     profileTitleInput.value = title;
     profileDescriptionInput.value = description;
 }
+
+const modalList = document.querySelectorAll(".modal");
+
+modalList.forEach((modal) => {
+    modal.addEventListener("mousedown", (e) => {
+        if (e.target.classList.contains("modal")) {
+            closePopup(modal);
+        }
+    });
+});
