@@ -58,6 +58,10 @@ const modalPreviewContainer = document.querySelector(
     ".modal__preview-container"
 );
 
+let cardData = initialCards.forEach((card) => {
+    new Card(card);
+});
+
 //** Buttons */
 
 const cardSubmitBtn = addCardModal.querySelector("#card-save-button");
