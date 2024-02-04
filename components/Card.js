@@ -44,4 +44,18 @@ export default class Card {
             .cloneNode(true);
         this._setEventListeners();
     }
+
+    generateCard() {
+        this._cardElement = this._getView();
+        this._cardImageEl = this._cardElement.querySelector(".card__image");
+        this._likeBtn = this._cardElement.querySelector(".card__like-button");
+        this._cardTrashBtn = this._element.querySelector(".card__trash-button");
+        this._setEventListeners();
+        this._cardImageEl.setAttribute("src", this._link);
+        this._cardImageEl.setAttribute("alt", this._name);
+        this._cardElement.querySelector(".card__title").textContent =
+            this._name;
+
+        return this._cardElement;
+    }
 }

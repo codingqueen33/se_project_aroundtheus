@@ -84,11 +84,18 @@ export default class FormValidator {
         });
     }
 
-    _toggleButton() {
-        if (this._hasInvalidInput()) {
-            this._enableButton();
-            return;
+    _toggleButton(inputElement) {
+        let foundInvalid = false;
+        this._inputElements.forEach((inputElement) => {
+            if (!inputElement.validity.valid) {
+                foundInvalid = true;
+            }
+        });
+        if (foundInvalid) {
+            this._submitButtonSelector.classList.add(this._inactiveButtonClass);
+            return (this._submitButtonSelector.disabled = true);
         }
-        this._disableButton();
+        this._submitButtonSelector.classList.remove(this._inactiveButtonClass);
+        this._submitButtonSelector.disabled = false;
     }
 }
