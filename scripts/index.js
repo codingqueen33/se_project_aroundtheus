@@ -1,4 +1,5 @@
 import FormValidator from "../components/FormValidator.js";
+import Card from "../components/Card.js";
 
 const initialCards = [
     {
@@ -107,10 +108,10 @@ function handleCardSubmit(e) {
     e.target.reset();
 }
 
-const renderCard = (cardData, cardsWrap) => {
-    const card = new Card(cardData, cardSelector);
-    cardsWrap.prepend(card.getView());
-};
+function renderCard(cardData, cardsWrap) {
+    const cardElement = getCardElement(cardData);
+    cardsWrap.prepend(cardElement);
+}
 
 // Validation //
 
