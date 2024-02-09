@@ -44,6 +44,7 @@ const profileForm = document.forms["modal-form"];
 
 const addCardModal = document.querySelector("#add-card-modal");
 const cardTitleInput = document.querySelector("#card-title-input");
+const addCardForm = document.querySelector("#add-card-form");
 const cardUrlInput = document.querySelector("#url-input");
 const cardTemplate =
     document.querySelector("#card-template").content.firstElementChild;
@@ -78,7 +79,7 @@ function createCard(cardData) {
 
 function getCard(cardData) {
     const cardElement = createCard(cardData);
-    cardList.prepend(cardElement);
+    cardsWrap.prepend(cardElement);
 }
 
 function openPopup(popup) {
@@ -105,21 +106,23 @@ function handleProfileEditSubmit(e) {
     closePopup(profileEditModal);
 }
 
+function handleCardSubmit(e) {
+    e.preventDefault();
+    if (addFormValidator._form.checkValidity()) {
+        const name = cardTitleInput.value.trim();
+        const link = cardUrlInput.value.trim();
+        renderCard({ name, link }, cardsWrap);
+        closePopup(addCardModal);
+        addCardForm.reset();
+        addFormValidator.resetValidation();
+    }
+}
+
 function handleImageClick(cardData) {
-    openPopup(modalPreviewContainer);
+    openPopup(previewModal);
     modalImage.src = cardData.link;
     modalImage.alt = cardData.name;
     previewCaption.textContent = cardData.name;
-}
-
-function handleCardSubmit(e) {
-    e.preventDefault();
-    const name = cardTitleInput.value.trim();
-    const link = cardUrlInput.value.trim();
-    const cardElement = createCard({ name, link }); // Use createCard instead of getView
-    cardsWrap.prepend(cardElement);
-    closePopup(addCardModal);
-    e.target.reset();
 }
 
 function renderCard(cardData, cardsWrap) {
@@ -182,7 +185,7 @@ addFormValidator.enableValidation();
 
 //** Events */
 
-addCardModal.addEventListener("submit", handleCardSubmit);
+addCardForm.addEventListener("submit", handleCardSubmit);
 
 profileEditBtn.addEventListener("click", () => {
     fillProfileForm(
