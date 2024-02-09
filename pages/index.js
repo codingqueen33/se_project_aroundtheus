@@ -77,11 +77,6 @@ function createCard(cardData) {
     return card.getView();
 }
 
-function getCard(cardData) {
-    const cardElement = createCard(cardData);
-    cardsWrap.prepend(cardElement);
-}
-
 function openPopup(popup) {
     popup.classList.add("modal_opened");
     document.addEventListener("keydown", closeOnEscape);
@@ -108,14 +103,12 @@ function handleProfileEditSubmit(e) {
 
 function handleCardSubmit(e) {
     e.preventDefault();
-    if (addFormValidator._form.checkValidity()) {
-        const name = cardTitleInput.value.trim();
-        const link = cardUrlInput.value.trim();
-        renderCard({ name, link }, cardsWrap);
-        closePopup(addCardModal);
-        addCardForm.reset();
-        addFormValidator.resetValidation();
-    }
+    const name = cardTitleInput.value.trim();
+    const link = cardUrlInput.value.trim();
+    renderCard({ name, link }, cardsWrap);
+    closePopup(addCardModal);
+    addCardForm.reset();
+    addFormValidator.resetValidation();
 }
 
 function handleImageClick(cardData) {
@@ -140,48 +133,30 @@ const validationSettings = {
     errorClass: "modal__error_visible",
 };
 
-const editFormElement = profileEditModal.querySelector(".modal__form");
 const addFormElement = addCardModal.querySelector(".modal__form");
 
-const editFormValidator = new FormValidator(
-    validationSettings,
-    editFormElement
-);
+const editFormValidator = new FormValidator(validationSettings, addCardForm);
 const addFormValidator = new FormValidator(validationSettings, addFormElement);
 
 editFormValidator.enableValidation();
 addFormValidator.enableValidation();
 
-// function getCardElement(cardData) {
-//     const cardElement = cardTemplate.cloneNode(true);
-//     const cardImageEl = cardElement.querySelector(".card__image");
-//     const cardTitleEl = cardElement.querySelector(".card__description-text");
-//     const modalImage = previewModal.querySelector(".modal__image");
-//     const previewCaption = previewModal.querySelector(".modal__caption");
+const formValidators = {};
 
-//     cardTitleEl.textContent = cardData.name;
-//     cardImageEl.src = cardData.link;
-//     cardImageEl.alt = cardData.name + " Photo";
+const enableValidation = (validationSettings) => {
+    const formList = Array.from(
+        document.querySelectorAll(validationSettings.formSelector)
+    );
+    formList.forEach((formElement) => {
+        const validator = new FormValidator(validationSettings, formElement);
+        const formName = formElement.getAttribute("name");
 
-//     const likeBtn = cardElement.querySelector(".card__like-button");
-//     likeBtn.addEventListener("click", () => {
-//         likeBtn.classList.toggle("card__like-button_active");
-//     });
+        formValidators[formName] = validator;
+        validator.enableValidation();
+    });
+};
 
-//     const cardTrashBtn = cardElement.querySelector(".card__trash-button");
-//     cardTrashBtn.addEventListener("click", (e) => {
-//         cardElement.remove();
-//     });
-
-//     cardImageEl.addEventListener("click", () => {
-//         modalImage.src = cardData.link;
-//         modalImage.alt = cardData.name;
-//         previewCaption.textContent = cardData.name;
-//         openPopup(previewModal);
-//     });
-
-//     return cardElement;
-// }
+enableValidation(validationSettings);
 
 //** Events */
 
