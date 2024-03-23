@@ -75,9 +75,9 @@ function createCard({ name, link }) {
 function openEditProfileModal() {
     profileEditForm.open();
     const currentUserInfo = userInfo.getUserInfo();
-    Constants.profileTitleInput.value = currentUserInfo.title.trim(); // Trim the text value
+    Constants.profileTitleInput.value = currentUserInfo.title.trim();
     Constants.profileDescriptionInput.value =
-        currentUserInfo.description.trim(); // Trim the text value
+        currentUserInfo.description.trim();
 }
 
 function openEditCardModal() {
