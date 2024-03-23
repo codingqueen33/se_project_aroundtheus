@@ -1,6 +1,7 @@
 import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
 import * as Constants from "../utils/Constants.js";
+import Popup from "../components/Popup.js";
 import PopupWithImages from "../components/PopupWithImages.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
@@ -16,12 +17,12 @@ const addFormValidator = new FormValidator(
     Constants.addCardForm
 );
 
-const popupImage = new PopupWithImages({
+const modalImage = new PopupWithImages({
     popupSelector: ".modal__image",
 });
 
 const handleImageClick = ({ name, link }) => {
-    popupImage.open({ name, link });
+    modalImage.open({ name, link });
 };
 
 const userInfo = new UserInfo({
@@ -62,7 +63,7 @@ const cardSection = new Section(
 cardSection.renderItems();
 addFormValidator.enableValidation();
 editFormValidator.enableValidation();
-popupImage.setEventListeners();
+modalImage.setEventListeners();
 profileEditForm.setEventListeners();
 addCardForms.setEventListeners();
 

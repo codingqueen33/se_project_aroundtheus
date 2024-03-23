@@ -7,18 +7,15 @@ export default class PopupWithImage extends Popup {
 
     open({ name, link }) {
         const cardImageEl = this._popupElement.querySelector(".modal__image");
-        if (cardImageEl) {
-            const cardCaption =
-                this._popupElement.querySelector(".modal__caption");
+        const cardCaption = this._popupElement.querySelector(".modal__caption");
+
+        if (cardImageEl && cardCaption) {
+            cardImageEl.alt = name;
             cardImageEl.src = link;
-            cardImageEl.alt = name; // Use name for alt text instead of link
             cardCaption.textContent = name;
             super.open();
         } else {
-            console.error(
-                "Image element not found in popup:",
-                this._popupElement
-            );
+            console.error("Image or caption not found:", this._popupElement);
         }
     }
 }

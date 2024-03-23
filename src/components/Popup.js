@@ -24,7 +24,7 @@ export default class Popup {
     };
 
     _handleClickOut(evt) {
-        if (evt.target.classList.contains("modal")) {
+        if (evt.target.classList.contains(".modal")) {
             this.close();
         }
     }
