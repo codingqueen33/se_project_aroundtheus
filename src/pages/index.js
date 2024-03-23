@@ -87,7 +87,7 @@ function openEditCardModal() {
 
 function handleProfileEditSubmit({ title, description }) {
     userInfo.setUserInfo({ title, description });
-    profileEditModal.close();
+    profileEditForm.close();
 }
 
 Constants.profileEditBtn.addEventListener("click", openEditProfileModal);
