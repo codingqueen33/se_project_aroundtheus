@@ -1,7 +1,6 @@
 import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
 import * as Constants from "../utils/Constants.js";
-import Popup from "../components/Popup.js";
 import PopupWithImages from "../components/PopupWithImages.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
@@ -18,7 +17,7 @@ const addFormValidator = new FormValidator(
 );
 
 const modalImage = new PopupWithImages({
-    popupSelector: ".modal__image",
+    popupSelector: "#preview-modal",
 });
 
 const handleImageClick = ({ name, link }) => {
@@ -38,17 +37,6 @@ const profileEditForm = new PopupWithForm({
         handleProfileEditSubmit(data);
     },
 });
-
-const addCardForms = new PopupWithForm({
-    popupSelector: "#add-card-modal",
-    handleFormSubmit: (data) => {
-        console.trace(data);
-        cardSection.addItem(createCard(data));
-        Constants.addCardForm.reset();
-        addFormValidator.resetValidation();
-    },
-});
-
 const cardSection = new Section(
     {
         items: Constants.initialCards,
@@ -59,6 +47,15 @@ const cardSection = new Section(
     },
     ".cards__list"
 );
+
+const addCardForms = new PopupWithForm({
+    popupSelector: "#add-card-modal",
+    handleFormSubmit: function (data) {
+        cardSection.addItem(createCard(data));
+        Constants.addCardForm.reset();
+        addFormValidator.resetValidation();
+    },
+});
 
 cardSection.renderItems();
 addFormValidator.enableValidation();

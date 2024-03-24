@@ -8,8 +8,12 @@ export default class Popup {
     }
 
     open() {
-        this._popupElement.classList.add("modal_opened");
-        document.addEventListener("keydown", this._handleEscClose);
+        if (this._popupElement) {
+            this._popupElement.classList.add("modal_opened");
+            document.addEventListener("keydown", this._handleEscClose);
+        } else {
+            console.error("Popup element not found:", this._popupElement);
+        }
     }
 
     close() {
@@ -24,7 +28,7 @@ export default class Popup {
     };
 
     _handleClickOut(evt) {
-        if (evt.target.classList.contains(".modal")) {
+        if (evt.target.classList.contains("modal")) {
             this.close();
         }
     }

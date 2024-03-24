@@ -1,9 +1,9 @@
 // Card.js
 
 export default class Card {
-    constructor(cardData, cardSelector, handleImageClick) {
-        this.name = cardData.name;
-        this.link = cardData.link;
+    constructor(data, cardSelector, handleImageClick) {
+        this.name = data.name;
+        this.link = data.link;
         this._cardSelector = cardSelector;
         this._handleImageClick = handleImageClick;
     }
@@ -20,7 +20,7 @@ export default class Card {
             });
 
         this._modalImage.addEventListener("click", () => {
-            this._handleImageClick(this);
+            this._handleImageClick({ name: this._name, link: this._link });
         });
     }
 
