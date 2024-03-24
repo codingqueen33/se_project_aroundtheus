@@ -50,8 +50,9 @@ const cardSection = new Section(
 
 const addCardForms = new PopupWithForm({
     popupSelector: "#add-card-modal",
-    handleFormSubmit: function (data) {
-        cardSection.addItem(createCard(data));
+    handleFormSubmit: (data) => {
+        const { title, url } = data;
+        cardSection.addItem(createCard({ name: title, link: url }));
         Constants.addCardForm.reset();
         addFormValidator.resetValidation();
     },
