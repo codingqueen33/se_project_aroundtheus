@@ -20,7 +20,7 @@ export default class Card {
             });
 
         this._modalImage.addEventListener("click", () => {
-            this._handleImageClick({ name: this._name, link: this._link });
+            this._handleImageClick({ name: this.name, link: this.link });
         });
     }
 
