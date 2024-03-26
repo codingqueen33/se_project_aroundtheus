@@ -9,7 +9,7 @@ import "./index.css";
 
 const editFormValidator = new FormValidator(
     Constants.validationSettings,
-    Constants.profileEditModal
+    Constants.profileForm
 );
 const addFormValidator = new FormValidator(
     Constants.validationSettings,
@@ -29,13 +29,9 @@ const userInfo = new UserInfo({
     profileDescriptionSelector: ".profile__description",
 });
 
-userInfo.getUserInfo();
-
-const profileEditForm = new PopupWithForm({
+const profileEditModal = new PopupWithForm({
     popupSelector: "#profile-edit-modal",
-    handleFormSubmit: (data) => {
-        handleProfileEditSubmit(data);
-    },
+    handleFormSubmit: handleProfileEditSubmit,
 });
 const cardSection = new Section(
     {
@@ -48,7 +44,7 @@ const cardSection = new Section(
     ".cards__list"
 );
 
-const addCardForms = new PopupWithForm({
+const addCardModal = new PopupWithForm({
     popupSelector: "#add-card-modal",
     handleFormSubmit: (data) => {
         const { title, url } = data;
@@ -62,8 +58,8 @@ cardSection.renderItems();
 addFormValidator.enableValidation();
 editFormValidator.enableValidation();
 modalImage.setEventListeners();
-profileEditForm.setEventListeners();
-addCardForms.setEventListeners();
+profileEditModal.setEventListeners();
+addCardModal.setEventListeners();
 
 function createCard({ name, link }) {
     const card = new Card({ name, link }, "#card-template", handleImageClick);
@@ -72,7 +68,7 @@ function createCard({ name, link }) {
 }
 
 function openEditProfileModal() {
-    profileEditForm.open();
+    profileEditModal.open();
     const currentUserInfo = userInfo.getUserInfo();
     Constants.profileTitleInput.value = currentUserInfo.title.trim();
     Constants.profileDescriptionInput.value =
@@ -80,12 +76,12 @@ function openEditProfileModal() {
 }
 
 function openEditCardModal() {
-    addCardForms.open();
+    addCardModal.open();
 }
 
 function handleProfileEditSubmit({ title, description }) {
     userInfo.setUserInfo({ title, description });
-    profileEditForm.close();
+    profileEditModal.close();
 }
 
 Constants.profileEditBtn.addEventListener("click", openEditProfileModal);
