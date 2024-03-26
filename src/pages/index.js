@@ -1,7 +1,7 @@
 import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
 import * as Constants from "../utils/Constants.js";
-import PopupWithImages from "../components/PopupWithImages.js";
+import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import Section from "../components/Section.js";
@@ -16,7 +16,7 @@ const addFormValidator = new FormValidator(
     Constants.addCardForm
 );
 
-const modalImage = new PopupWithImages({
+const modalImage = new PopupWithImage({
     popupSelector: "#preview-modal",
 });
 
@@ -50,7 +50,7 @@ const addCardModal = new PopupWithForm({
         const { title, url } = data;
         cardSection.addItem(createCard({ name: title, link: url }));
         Constants.addCardForm.reset();
-        addFormValidator.resetValidation();
+        addFormValidator.disableButton();
     },
 });
 
