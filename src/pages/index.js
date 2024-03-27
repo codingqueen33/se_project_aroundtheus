@@ -49,7 +49,7 @@ const addCardModal = new PopupWithForm({
     handleFormSubmit: (data) => {
         const { title, url } = data;
         cardSection.addItem(createCard({ name: title, link: url }));
-        Constants.addCardForm.reset();
+        addCardModal.reset();
         addFormValidator.disableButton();
     },
 });
